@@ -10,7 +10,7 @@ import { SetUpComponent } from './set-up/set-up.component';
 const routes: Routes = [
   {path: "home", component: HomeComponent},
   {path: "setup", component: SetUpComponent},
-  {path: "Play", component: PlayGameComponent}
+  {path: "play", component: PlayGameComponent}
 ];
 
 @NgModule({

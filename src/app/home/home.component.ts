@@ -8,7 +8,7 @@ import { CardGameService } from '../card-game.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private gameSVC: CardGameService) { }
+  constructor(public gameSVC: CardGameService) { }
 
   ngOnInit(): void {
   }
