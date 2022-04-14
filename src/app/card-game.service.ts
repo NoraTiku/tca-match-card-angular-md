@@ -84,6 +84,14 @@ export class CardGameService {
         , "match"
       ]
     }];
+
+    addGameResult = (r: gameResult ) => {
+      this.gameResults = [
+        ...this.gameResults, 
+        r
+
+      ];
+    };
   
  
   

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CardGameService } from '../card-game.service';
+import { CardGameService, gameResult } from '../card-game.service';
 
 @Component({
   selector: 'app-play-game',
@@ -13,4 +13,12 @@ export class PlayGameComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  endGame = (r: gameResult) => {
+    //add new game result to the service
+
+
+    //navigate back to the home
+  }
+
 }
+

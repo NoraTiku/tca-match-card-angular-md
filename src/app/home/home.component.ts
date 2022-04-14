@@ -11,6 +11,10 @@ export class HomeComponent implements OnInit {
   constructor(public gameSVC: CardGameService) { }
 
   ngOnInit(): void {
+    this.gamesPlayed = this.gameSVC.gameResults.length;
+
   }
+
+  gamesPlayed = 0;
 
 }
