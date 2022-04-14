@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CardGameService, gameResult } from '../card-game.service';
+import {Router } from '@angular/router';
 
 @Component({
   selector: 'app-play-game',
@@ -8,17 +9,27 @@ import { CardGameService, gameResult } from '../card-game.service';
 })
 export class PlayGameComponent implements OnInit {
 
-  constructor(private gameSVC: CardGameService) { }
+  constructor(private gameSVC: CardGameService,
+    private router: Router
+
+    ) { }
 
   ngOnInit(): void {
   }
 
-  endGame = (r: gameResult) => {
+  endGame = () => {
     //add new game result to the service
+    this.gameSVC.addGameResult({
+      start: "",
+      end: "",
+      players: [],
+      winner: ""
+    });
 
 
     //navigate back to the home
-  }
+    this.router.navigateByUrl("home");
+  };
 
 }
 
