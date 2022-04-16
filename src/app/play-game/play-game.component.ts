@@ -7,6 +7,8 @@ import {Router } from '@angular/router';
   templateUrl: './play-game.component.html',
   styleUrls: ['./play-game.component.css']
 })
+
+
 export class PlayGameComponent implements OnInit {
 
   constructor(private gameSVC: CardGameService,

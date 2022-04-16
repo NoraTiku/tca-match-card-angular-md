@@ -15,17 +15,20 @@ export interface player {
   order: number;
 };
 export interface gameResult {
-  start: string;      // "2022-02-14T18:49:30"
-  end: string;        // "2022-02-14T18:59:30"
-  winner: string;      // "Me"
+  start: string;      
+  end: string;        
+  winner: string;      
   players: player[] ;  
+  
 
 
-  // tca-zombie-specific
-  expansions?: any[];
-  gameTurns?: any[]
-};
 
+}
+
+export interface currentGame{
+  start: string;
+  players: string[];
+}
 
 
 
@@ -33,7 +36,7 @@ const game1: gameResult = {
   start: "2022-02-14T18:55:00"
   , end: "2022-02-14T19:00:00"
   , winner: "Me"
-  , players: [{ name: "Me", order: 1 }, { name: "Jack", order: 2 }, { name: "Taylor", order: 3 }]
+  , players: [{ name: "Nora", order: 1 }, { name: "Mino", order: 2 }, { name: "Jayden", order: 3 }]
   
   
 };
@@ -42,7 +45,7 @@ const game2: gameResult = {
   start: "2022-02-14T19:05:00"
   , end: "2022-02-14T19:35:00"
   , winner: "Stephanie"
-  , players: [{ name: "Me", order: 1 }, { name: "Stephanie", order: 2 }]
+  , players: [{ name: "Nora", order: 1 }, { name: "Bless", order: 2 }]
 };
 
 
@@ -68,7 +71,17 @@ addGameResult = (r: gameResult) => {
   ];
 };
 
-  
+    getUniquePlayers = () => (
+      [...new Set(this.gameResults.flatMap(x => x.players.map(y => y.name)))]
+  );
+
+  currentGame: currentGame = {
+    start: "",
+    players: []
+  };
+  setCurrentGame = (g: currentGame) => {
+    this.currentGame = g;
+  };
   
   
  
