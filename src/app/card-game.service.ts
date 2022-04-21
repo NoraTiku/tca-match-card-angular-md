@@ -1,19 +1,11 @@
 import { Injectable } from '@angular/core';
 
-export interface gameResult {
-  start: string;
-  end: string;
-  //win: string;
-  //myTurns: string[];
-  
-}
-
-
 
 export interface player {
   name: string;
   order: number;
 };
+
 export interface gameResult {
   start: string;      
   end: string;        
@@ -82,6 +74,13 @@ addGameResult = (r: gameResult) => {
   setCurrentGame = (g: currentGame) => {
     this.currentGame = g;
   };
+
+
+  calculateShortestGame = () => (
+    Math.min(
+      ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
+    )
+  );
   
   
  

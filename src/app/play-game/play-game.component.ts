@@ -22,10 +22,14 @@ export class PlayGameComponent implements OnInit {
   endGame = () => {
     //add new game result to the service
     this.gameSVC.addGameResult({
-      start: "",
-      end: "",
-      players: [],
-      winner: ""
+      start: this.gameSVC.currentGame.start,
+      end: new Date().toISOString(),
+      players: this.gameSVC.currentGame.players.map(x => ({
+        name: x, order: 0
+
+
+      })),
+      winner: "Tiku"
     });
 
 

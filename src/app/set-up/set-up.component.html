@@ -3,9 +3,11 @@
 <h3>Choose Players</h3>
 
 <p *ngFor="let p of availablePlayers">
-    {{p }} ({{p.checked.toString()}})
+    {{p }} ({{p.checked.toString() }})
 </p>
 <button 
-mat-raised-button color="warn"
+mat-raised-button 
+color="warn"
+(click) ="startGame()"></button>
 
-routerLink="/play">Start Game</button>
+<!-- routerLink="/play">Start Game -->

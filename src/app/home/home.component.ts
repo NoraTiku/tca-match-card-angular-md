@@ -13,8 +13,12 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     this.gamesPlayed = this.gameSVC.gameResults.length;
 
+    this.shortestGameDuration = this.gameSVC.calculateShortestGame() / 1000 / 60;
+
   }
 
   gamesPlayed = 0;
+
+  shortestGameDuration = 0;
 
 }
