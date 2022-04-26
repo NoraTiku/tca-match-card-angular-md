@@ -7,7 +7,7 @@ import { PlayGameComponent } from './play-game/play-game.component';
 
 
 const routes: Routes = [
-  {path: "home", component: HomeComponent},
+  {path: "", component: HomeComponent},
   {path: "play", component: PlayGameComponent}
 ];
 

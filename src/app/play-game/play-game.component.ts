@@ -29,7 +29,7 @@ export class PlayGameComponent implements OnInit {
 
 
     //navigate back to the home
-    this.router.navigateByUrl("home");
+    this.router.navigateByUrl("/");
   };
 
 }
