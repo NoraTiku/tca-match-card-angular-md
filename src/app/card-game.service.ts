@@ -3,19 +3,20 @@ import { Injectable } from '@angular/core';
 export interface gameResult {
   start: string
   end: string;        
-  turnMatches: boolean[]    
+  turns:  number;    
 }
 
 const game1: gameResult = {
   start: "2022-02-14T18:55:00"
   , end: "2022-02-14T19:00:00"
-  , turnMatches: [false, false, false]  
+  , turns: 10
 };
 
 const game2: gameResult = {
   start: "2022-02-14T19:05:00"
   , end: "2022-02-14T19:35:00"
-  , turnMatches: [true, true, true, false, true] 
+  ,  turns: 10
+  
 };
 
 @Injectable({
@@ -36,5 +37,10 @@ export class CardGameService {
       ...this.gameResults,
       r
     ];
-  };  
+  }; 
+  
+  
+  calculateFastestWin = () => {
+    return 10;
+  }
 }

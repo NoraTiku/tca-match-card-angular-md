@@ -24,13 +24,15 @@ export class PlayGameComponent implements OnInit {
     this.gameSVC.addGameResult({
       start: "",
       end: new Date().toISOString(),
-      turnMatches: []
+      turns: this.turns
     });
 
 
     //navigate back to the home
     this.router.navigateByUrl("/");
   };
+
+  turns = 0;
 
 }
 
