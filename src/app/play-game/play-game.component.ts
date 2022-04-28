@@ -27,6 +27,8 @@ export class PlayGameComponent implements OnInit {
       turns: this.turns
     });
 
+    
+
 
     //navigate back to the home
     this.router.navigateByUrl("/");

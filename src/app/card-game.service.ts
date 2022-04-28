@@ -38,9 +38,31 @@ export class CardGameService {
       r
     ];
   }; 
+
+  gameTurns = (r: gameResult) => {
+    this.gameResults = [
+      ...this.gameResults,
+      r
+    ];
+  }; 
   
   
   calculateFastestWin = () => {
     return 10;
-  }
+  };
+  
+
+  /** 
+  calculateFastestWin = () => {
+    Math.min(
+        ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
+    )
+  };
+
+  **/
+
+ 
+
+
+
 }
