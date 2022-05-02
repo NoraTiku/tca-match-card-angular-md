@@ -11,7 +11,7 @@ import {Router } from '@angular/router';
 
 export class PlayGameComponent implements OnInit {
 
-  constructor(private gameSVC: CardGameService,
+  constructor(public gameSVC: CardGameService,
     private router: Router
 
     ) { }
@@ -33,5 +33,28 @@ export class PlayGameComponent implements OnInit {
 
   turns = 0;
 
+
+  iWon = () => {
+    
+    this.gameSVC.TakeTurns({
+      start: "",
+      end: new Date().toISOString(),
+      turns: this.turns
+    });
+
+    
+  };
+
+  
+
+
+
+
+
+
 }
+
+
+
+
 

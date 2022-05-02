@@ -3,8 +3,9 @@ import { Injectable } from '@angular/core';
 export interface gameResult {
   start: string
   end: string;        
-  turns:  number;    
+  turns:  any;    
 }
+
 
 const game1: gameResult = {
   start: "2022-02-14T18:55:00"
@@ -39,7 +40,10 @@ export class CardGameService {
     ];
   }; 
 
-  gameTurns = (r: gameResult) => {
+
+
+
+  TakeTurns = (r: gameResult) => {
     this.gameResults = [
       ...this.gameResults,
       r
@@ -47,19 +51,35 @@ export class CardGameService {
   }; 
   
   
+  
+  /** 
   calculateFastestWin = () => {
     return 10;
   };
-  
-
-  /** 
-  calculateFastestWin = () => {
-    Math.min(
-        ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
-    )
-  };
-
   **/
+
+/** 
+calculateFastestWin = (r: gameResult[]) =>{ (
+  Math.min(...r.map(x => x.turns.length,
+    
+    ))
+  
+)};
+
+**/
+
+
+
+  calculateFastestWin = () => (
+
+    
+      Math.min(...this.gameResults.map(x => x.turns.length))
+  
+);
+ 
+
+
+
 
  
 
