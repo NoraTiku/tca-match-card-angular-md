@@ -36,12 +36,8 @@ export class PlayGameComponent implements OnInit {
 
   iWon = () => {
     
-    this.gameSVC.TakeTurns({
-      start: "",
-      end: new Date().toISOString(),
-      turns: this.turns
-    });
-
+    this.turns = this.turns +1;
+   
     
   };
 

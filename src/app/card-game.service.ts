@@ -16,7 +16,7 @@ const game1: gameResult = {
 const game2: gameResult = {
   start: "2022-02-14T19:05:00"
   , end: "2022-02-14T19:35:00"
-  ,  turns: 10
+  ,  turns: 5
   
 };
 
@@ -72,14 +72,20 @@ calculateFastestWin = (r: gameResult[]) =>{ (
 
   calculateFastestWin = () => (
 
-    
-      Math.min(...this.gameResults.map(x => x.turns.length))
+      Math.min(...this.gameResults.map(x => x.turns))
   
 );
  
 
 
+/**
+calculateFastestWin = () => (
+  Math.min(
+      ...this.gameResults.map(x => Date.parse(x.end) - Date.parse(x.start))
+  )
+);
 
+ */
 
  
 

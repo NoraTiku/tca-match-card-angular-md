@@ -28,7 +28,7 @@ import { MatInputModule } from '@angular/material/input';
     MatIconModule,
     MatCheckboxModule,
     MatFormFieldModule,
-    MatIconModule
+    
 
   ],
   providers: [],
